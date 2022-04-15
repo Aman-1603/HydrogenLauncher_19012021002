@@ -5,12 +5,13 @@ plugins {
 
 android {
     compileSdk 31
+    buildToolsVersion "29.0.3"
     viewBinding.enabled = true
 
     defaultConfig {
         applicationId "com.example.hydrogenlauncher_19012021002"
         minSdk 23
-        targetSdk 31
+        targetSdk 29
         versionCode 1
         versionName "1.0"
 
@@ -36,6 +37,7 @@ android {
 dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    implementation "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21"
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.core:core-ktx:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'

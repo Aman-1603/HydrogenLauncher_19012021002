@@ -35,7 +35,7 @@ class Adapter(
         holder.appBinding.appName.text = appList?.get(position)?.appName
         holder.appBinding.root.setOnClickListener {
             context.startActivity(
-                context.packageManager.getLaunchIntentForPackage(appList?.get(position)?.packageName?:"com.krsolutions.HydrogenLauncher_19012021002")
+                context.packageManager.getLaunchIntentForPackage(appList?.get(position)?.packageName?:"com.example.hydrogenlauncher_19012021002")
             )
         }
     }
