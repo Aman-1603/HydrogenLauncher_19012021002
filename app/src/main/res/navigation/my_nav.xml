@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_HomeFragment_to_app_drawer"
             app:destination="@id/app_drawer" />
+        <action
+            android:id="@+id/action_HomeFragment_to_setting_BeforeModual"
+            app:destination="@id/setting_BeforeModual" />
     </fragment>
     <fragment
         android:id="@+id/app_drawer"
@@ -22,5 +25,22 @@
         <action
             android:id="@+id/action_app_drawer_to_HomeFragment"
             app:destination="@id/HomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.hydrogenlauncher_19012021002.SettingsFragment"
+        android:label="SettingsFragment" >
+        <action
+            android:id="@+id/action_settingsFragment_to_setting_BeforeModual"
+            app:destination="@id/setting_BeforeModual" />
+    </fragment>
+    <fragment
+        android:id="@+id/setting_BeforeModual"
+        android:name="com.example.hydrogenlauncher_19012021002.Setting_BeforeModual"
+        android:label="fragment_setting__before_modual"
+        tools:layout="@layout/fragment_setting__before_modual" >
+        <action
+            android:id="@+id/action_setting_BeforeModual_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
 </navigation>
