@@ -58,6 +58,22 @@
             android:text="Notifications:"
             android:textColor="@android:color/black" />
 
+        <TextView
+            android:id="@+id/tv_Volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Volume:"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/tv_Brightness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Brightness:"
+            android:textColor="@android:color/black" />
+
         <ProgressBar
             android:id="@+id/pb_volume"
             style="?android:attr/progressBarStyleHorizontal"

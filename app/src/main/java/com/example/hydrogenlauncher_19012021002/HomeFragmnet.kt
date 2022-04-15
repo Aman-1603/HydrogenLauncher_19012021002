@@ -24,6 +24,11 @@ class HomeFragmnet : Fragment() {
             findNavController().navigate(R.id.app_drawer)
         }
 
+        val button1 = view.findViewById<Button>(R.id.goto_setting)
+        button1.setOnClickListener{
+            findNavController().navigate(R.id.setting_BeforeModual)
+        }
+
         return view
     }
 
