@@ -25,7 +25,7 @@ class app_drawer : Fragment(R.layout.fragment_app_drawer) {
         mainBinding.apply {
            drawerApp.setOnClickListener {
 
-               findNavController().navigate(R.id.HomeFragment)
+               findNavController().navigate(R.id.action_app_drawer_to_HomeFragment)
            }
         }
 //        val view = mainBinding.root

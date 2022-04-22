@@ -12,10 +12,12 @@
         tools:layout="@layout/fragment_home_fragmnet" >
         <action
             android:id="@+id/action_HomeFragment_to_app_drawer"
-            app:destination="@id/app_drawer" />
+            app:destination="@id/app_drawer"
+            app:enterAnim="@anim/swipeup_animation" />
         <action
             android:id="@+id/action_HomeFragment_to_setting_BeforeModual"
-            app:destination="@id/setting_BeforeModual" />
+            app:destination="@id/setting_BeforeModual"
+            app:enterAnim="@anim/swiperight_animation" />
     </fragment>
     <fragment
         android:id="@+id/app_drawer"
@@ -24,7 +26,8 @@
         tools:layout="@layout/fragment_app_drawer" >
         <action
             android:id="@+id/action_app_drawer_to_HomeFragment"
-            app:destination="@id/HomeFragment" />
+            app:destination="@id/HomeFragment"
+            app:enterAnim="@anim/swipedown_animation" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
@@ -42,5 +45,12 @@
         <action
             android:id="@+id/action_setting_BeforeModual_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_setting_BeforeModual_to_HomeFragment"
+            app:destination="@id/HomeFragment"
+            app:enterAnim="@anim/swiperight_animation"
+            app:exitAnim="@anim/swipeleft_animation"
+            app:popEnterAnim="@anim/swiperight_animation"
+            app:popExitAnim="@anim/swipeleft_animation" />
     </fragment>
 </navigation>

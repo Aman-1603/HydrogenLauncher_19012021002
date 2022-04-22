@@ -6,16 +6,22 @@ import android.os.Bundle
 
 import android.content.Intent
 import android.content.pm.ResolveInfo
+import android.graphics.Color
+import android.os.Build
+import android.view.View
+import android.view.WindowManager
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.hydrogenlauncher_19012021002.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var resolvedApplist: List<ResolveInfo>
     lateinit var mainBinding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         val view = mainBinding.root
         setContentView(view)
@@ -41,6 +47,8 @@ class MainActivity : AppCompatActivity() {
             ))
         }
     }
+
+
 
 
 }

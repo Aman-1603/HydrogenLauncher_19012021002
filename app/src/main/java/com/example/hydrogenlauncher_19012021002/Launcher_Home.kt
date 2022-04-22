@@ -11,13 +11,7 @@ class Launcher_Home : AppCompatActivity() {
         super.onCreate(savedInstanceState)
      setContentView(R.layout.activity_launcher_home)
 
-
-
-
-
-
-
-
+//navigating using button
         val navHostFragmnet = supportFragmentManager
             .findFragmentById(R.id.fragment) as NavHostFragment
         navController = navHostFragmnet.navController
