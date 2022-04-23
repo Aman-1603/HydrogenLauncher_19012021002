@@ -8,6 +8,7 @@ import android.content.Intent
 import android.content.pm.ResolveInfo
 import android.graphics.Color
 import android.os.Build
+import android.view.GestureDetector
 import android.view.View
 import android.view.WindowManager
 
@@ -16,6 +17,8 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.hydrogenlauncher_19012021002.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+
 
     private lateinit var resolvedApplist: List<ResolveInfo>
     lateinit var mainBinding: ActivityMainBinding
