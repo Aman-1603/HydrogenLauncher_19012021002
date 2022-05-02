@@ -53,4 +53,9 @@
             app:popEnterAnim="@anim/swiperight_animation"
             app:popExitAnim="@anim/swipeleft_animation" />
     </fragment>
+    <fragment
+        android:id="@+id/UIDesgin"
+        android:name="com.example.hydrogenlauncher_19012021002.UIDesgin"
+        android:label="fragment_u_i_desgin"
+        tools:layout="@layout/fragment_u_i_desgin" />
 </navigation>

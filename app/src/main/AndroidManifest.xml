@@ -9,42 +9,39 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HydrogenLauncher_19012021002">
-
-
-
-<!--        <activity-->
-<!--            android:name=".Launcher_Home"-->
-<!--            android:exported="true" />-->
-
+        <activity
+            android:name=".secondactivity"
+            android:exported="true" />
+        <activity
+            android:name=".recentactivity_dialogbox"
+            android:exported="true" />
         <activity
             android:name=".Launcher_Home"
-            android:exported="true"
-            android:enabled="true">
+            android:enabled="true"
+            android:exported="true">
+
+            <!-- <activity -->
+            <!-- android:name=".Launcher_Home" -->
+            <!-- android:exported="true" -->
+            <!-- android:enabled="true"> -->
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-
-
-
-
-        //main Activity
-
-<!--        <activity-->
-<!--            android:name=".MainActivity"-->
-<!--            android:exported="true">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.HOME" />-->
-<!--                <category android:name="android.intent.category.DEFAULT" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
+                <!-- <category android:name="android.intent.category.HOME" /> -->
+                <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+                <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

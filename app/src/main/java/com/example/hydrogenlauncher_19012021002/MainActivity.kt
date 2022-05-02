@@ -6,11 +6,8 @@ import android.os.Bundle
 
 import android.content.Intent
 import android.content.pm.ResolveInfo
-import android.graphics.Color
-import android.os.Build
-import android.view.GestureDetector
-import android.view.View
-import android.view.WindowManager
+import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -18,12 +15,16 @@ import com.example.hydrogenlauncher_19012021002.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var layout: ConstraintLayout
 
 
     private lateinit var resolvedApplist: List<ResolveInfo>
     lateinit var mainBinding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
+
 
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         val view = mainBinding.root
@@ -49,9 +50,17 @@ class MainActivity : AppCompatActivity() {
                 Comparator<AppBlock> { o1, o2 -> o1?.appName?.compareTo(o2?.appName?:"",true)?:0; }
             ))
         }
+
+        layout = findViewById(R.id.activity_main_gesture)
+        layout.setOnTouchListener(object : OnSwipeTouchListener(this@MainActivity) {
+            override fun onSwipeDown() {
+                super.onSwipeDown()
+//                Intent(this@MainActivity,Launcher_Home::class.java).apply {
+//                    startActivity(this)
+//                }
+                Toast.makeText(this@MainActivity,"gesture down detected",Toast.LENGTH_SHORT).show()
+            }
+        })
+        }
+
     }
-
-
-
-
-}
