@@ -1,9 +1,13 @@
 package com.example.hydrogenlauncher_19012021002
 import android.app.AlertDialog
 import android.content.Intent
+import android.graphics.Color
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.RelativeLayout
 import android.widget.Toast
@@ -15,20 +19,32 @@ class Launcher_Home : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_launcher_home)
+        getSupportActionBar()?.hide()
+//        setStatusBarTransparent()
 
 
         //go to right second activity
 
-        val button = findViewById<Button>(R.id.gotosecondactivity)
-        button.setOnClickListener {
+        val button1 = findViewById<Button>(R.id.gotosecondactivity)
+        button1.setOnClickListener {
             Intent(this, secondactivity::class.java).apply {
 
                 startActivity(this)
-                overridePendingTransition(R.anim.swiperight_animation,R.anim.swipeleft_animation)
+                overridePendingTransition(R.anim.swiperight_animation, R.anim.swipeleft_animation)
             }
+        }
 
+        //goto setting modual
 
+            val setting = findViewById<Button>(R.id.gotosetting)
+            setting.setOnClickListener {
+                Intent(this, Setting_Modual::class.java).apply {
 
+                    startActivity(this)
+
+                }
+
+            }
 
             //upto this
 
@@ -97,5 +113,6 @@ class Launcher_Home : AppCompatActivity() {
 
 
         }
+
     }
-}
+
