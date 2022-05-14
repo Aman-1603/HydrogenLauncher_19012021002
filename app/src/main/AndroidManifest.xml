@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hydrogenlauncher_19012021002">
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 
     <application
@@ -12,14 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HydrogenLauncher_19012021002">
         <activity
+            android:name=".Notification_Panel"
+            android:exported="true" />
+        <activity
             android:name=".Setting_Modual"
             android:exported="true" />
         <activity
             android:name=".secondactivity"
             android:exported="true" />
-        <activity
-            android:name=".recentactivity_dialogbox"
-            android:exported="true" />
+
         <activity
             android:name=".Launcher_Home"
             android:enabled="true"

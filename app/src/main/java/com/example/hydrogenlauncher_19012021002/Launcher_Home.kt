@@ -76,22 +76,20 @@ class Launcher_Home : AppCompatActivity() {
             layout.setOnTouchListener(object : OnSwipeTouchListener(this@Launcher_Home) {
                 override fun onSwipeLeft() {
                     super.onSwipeLeft()
-                    Toast.makeText(
-                        this@Launcher_Home,
-                        "Swipe Left gesture detected",
-                        Toast.LENGTH_SHORT
-                    )
-                        .show()
-                }
-
-                override fun onSwipeRight() {
-
-                    super.onSwipeRight()
                     Intent(this@Launcher_Home, secondactivity::class.java).apply {
                         startActivity(this)
                         overridePendingTransition(R.anim.swiperight_animation,R.anim.swipeleft_animation)
                     }
                 }
+
+//                override fun onSwipeRight() {
+//
+//                    super.onSwipeRight()
+//                    Intent(this@Launcher_Home, secondactivity::class.java).apply {
+//                        startActivity(this)
+//                        overridePendingTransition(R.anim.swiperight_animation,R.anim.swipeleft_animation)
+//                    }
+//                }
 
                 override fun onSwipeUp() {
                     super.onSwipeUp()

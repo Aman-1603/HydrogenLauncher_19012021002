@@ -126,7 +126,8 @@
 
               <RelativeLayout
                   android:layout_width="match_parent"
-                  android:layout_height="wrap_content">
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="10dp">
 
                   <ImageView
                       android:id="@+id/notification_icon"
@@ -161,7 +162,8 @@
 
               <RelativeLayout
                   android:layout_width="match_parent"
-                  android:layout_height="wrap_content">
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="10dp">
 
                   <ImageView
                       android:id="@+id/brightness_icon"
@@ -213,9 +215,9 @@
                       android:id="@+id/volume_icon"
                       android:layout_width="40dp"
                       android:layout_height="40dp"
+                      android:background="@drawable/setting_back_nightmode"
                       android:padding="10dp"
-                      android:src="@drawable/ic_baseline_mode_night_24"
-                      android:background="@drawable/setting_back_nightmode"/>
+                      android:src="@drawable/ic_baseline_mode_night_24" />
 
                   <TextView
                       android:id="@+id/volume_text"
@@ -241,15 +243,16 @@
 
               <RelativeLayout
                   android:layout_width="match_parent"
-                  android:layout_height="wrap_content">
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="10dp">
 
                   <ImageView
                       android:id="@+id/Theme_icon"
                       android:layout_width="40dp"
                       android:layout_height="40dp"
+                      android:background="@drawable/setting_back_nightmode"
                       android:padding="10dp"
-                      android:src="@drawable/ic_baseline_mode_night_24"
-                      android:background="@drawable/setting_back_nightmode"/>
+                      android:src="@drawable/ic_baseline_mode_night_24" />
 
                   <TextView
                       android:id="@+id/Theme_text"
@@ -276,7 +279,8 @@
 
               <RelativeLayout
                   android:layout_width="match_parent"
-                  android:layout_height="wrap_content">
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="10dp">
 
                   <ImageView
                       android:id="@+id/wallpaper_icon"
@@ -290,12 +294,12 @@
                       android:id="@+id/wallpaper_text"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:layout_marginStart="20dp"
                       android:layout_centerVertical="true"
+                      android:layout_marginStart="20dp"
+                      android:layout_toEndOf="@+id/wallpaper_icon"
                       android:text="Wallpaper"
                       android:textColor="#FFFFFF"
-                      android:textStyle="bold"
-                      android:layout_toEndOf="@+id/wallpaper_icon"/>
+                      android:textStyle="bold" />
 
                   <Switch
                       android:layout_width="wrap_content"
