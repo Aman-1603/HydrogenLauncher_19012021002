@@ -1,0 +1,20 @@
+<resources>
+
+
+
+    <style name="RegularTextStyle">
+        <!--        <item name="fontFamily">@font/cs_book</item>-->
+        <item name="fontFamily">@font/googlesansregular</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+    </style>
+
+
+    <style name="CustomShapeAppearanceBMIView">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">125dp</item>
+    </style>
+
+
+
+</resources>

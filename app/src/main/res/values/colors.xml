@@ -16,5 +16,9 @@
     <color name="privet_account">#E6A326</color>
     <color name="security">#D95F69</color>
 
+    <color name="textColorPrimary">#212121</color>
+    <color name="colorSecondary">#2CA1BC</color>
+
+
 
 </resources>

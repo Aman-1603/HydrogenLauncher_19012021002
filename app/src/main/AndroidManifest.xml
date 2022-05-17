@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,6 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HydrogenLauncher_19012021002">
+        <activity
+            android:name=".HomeScreen_LongPress"
+            android:exported="true" />
+        <activity
+            android:name=".Wallpaper_Modual"
+            android:exported="true" />
         <activity
             android:name=".Notification_Panel"
             android:exported="true" />
@@ -21,7 +26,6 @@
         <activity
             android:name=".secondactivity"
             android:exported="true" />
-
         <activity
             android:name=".Launcher_Home"
             android:enabled="true"

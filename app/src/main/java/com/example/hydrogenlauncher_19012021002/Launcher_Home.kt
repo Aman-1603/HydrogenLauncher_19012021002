@@ -1,16 +1,19 @@
 package com.example.hydrogenlauncher_19012021002
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
+import android.provider.MediaStore
+import android.transition.Transition
 import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
-import android.widget.Button
-import android.widget.RelativeLayout
-import android.widget.Toast
+import android.widget.*
 
 class Launcher_Home : AppCompatActivity() {
     private lateinit var layout: RelativeLayout
@@ -95,19 +98,77 @@ class Launcher_Home : AppCompatActivity() {
                     super.onSwipeUp()
                     Intent(this@Launcher_Home, MainActivity::class.java).apply {
                         startActivity(this)
+                        overridePendingTransition(R.anim.swipeup_animation,R.anim.swipedown_animation)
+
                     }
                 }
 
                 override fun onSwipeDown() {
                     super.onSwipeDown()
-                    Toast.makeText(
-                        this@Launcher_Home,
-                        "Swipe down gesture detected",
-                        Toast.LENGTH_SHORT
-                    )
-                        .show()
+                    Intent(this@Launcher_Home, Notification_Panel::class.java).apply {
+                        startActivity(this)
+                        overridePendingTransition(R.anim.swipedown_animation,R.anim.swipedown_animation)
+
+                    }
                 }
+
+                override fun onLongClick() {
+                    super.onLongClick()
+                    val mDialogView =
+                        LayoutInflater.from(this@Launcher_Home).inflate(R.layout.activity_home_screen_long_press, null)
+
+                    //alertdialogbuilder
+                    val mBuilder = AlertDialog.Builder(this@Launcher_Home)
+                        .setView(mDialogView)
+                        .setTitle("Quick Panel")
+                    mBuilder.show()
+                        overridePendingTransition(R.anim.swipedown_animation,R.anim.swipedown_animation)
+
+                    }
+
+
             })
+
+
+
+        //navigatiging between application
+
+        val dial = findViewById<View>(R.id.nav_dial)
+        dial.setOnClickListener {
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:+91 8867127270")
+            startActivity(intent)
+        }
+
+        val contact = findViewById<View>(R.id.nav_contact)
+        contact.setOnClickListener {
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = ContactsContract.Contacts.CONTENT_TYPE
+            startActivity(intent)
+        }
+
+        val sms = findViewById<View>(R.id.nav_sms)
+        sms.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+
+
+            intent.type = "vnd.android-dir/mms-sms"
+
+            startActivity(intent)
+        }
+
+        val camera = findViewById<View>(R.id.nav_camera)
+        camera.setOnClickListener {
+            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            startActivity(intent)
+        }
+
+        val gallery = findViewById<View>(R.id.nav_browser)
+        gallery.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("https://www.google.co.in/")
+            startActivity(intent)
+        }
 
 
         }

@@ -15,6 +15,7 @@ class secondactivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_secondactivity)
+        getSupportActionBar()?.hide()
 
         val recyclerView = findViewById<RecyclerView>(R.id.recycler)
         val arrayList = ArrayList<second_activity_companion>()

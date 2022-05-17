@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/relativeLayout"
-    android:background="#ff0000"
+    android:background="#000000"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Launcher_Home">
@@ -23,8 +23,8 @@
 
     <Button
         android:id="@+id/gonext"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
+        android:layout_width="175dp"
+        android:layout_height="70dp"
         android:text="go next"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -35,8 +35,8 @@
 
     <Button
         android:id="@+id/gotosetting"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
+        android:layout_width="175dp"
+        android:layout_height="70dp"
         android:layout_marginLeft="200dp"
         android:text="go setting"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,18 +44,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"></Button>
 
+
     <Button
         android:id="@+id/gotosecondactivity"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
+        android:layout_width="wrap_content"
+        android:layout_height="61dp"
         android:layout_below="@+id/dialog_box"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="209dp"
-        android:layout_marginBottom="131dp"
+        android:layout_marginStart="199dp"
+        android:layout_marginTop="-65dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="600dp"
         android:text="go next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,10 +65,10 @@
 
     <Button
         android:id="@+id/dialog_box"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
+        android:layout_width="175dp"
+        android:layout_height="70dp"
         android:layout_below="@+id/gonext"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="-6dp"
         android:text="go dialogbox"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,6 +76,88 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.079"></Button>
+
+    <soup.neumorphism.NeumorphCardView
+        android:id="@+id/calculateBmi"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="650dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:neumorph_backgroundColor="#C1000000">
+
+
+        <View
+            android:id="@+id/nav_dial"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/home_dial" />
+
+        <View
+            android:id="@+id/nav_contact"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/home_contact" />
+
+        <View
+            android:id="@+id/nav_sms"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/home_sms" />
+
+        <View
+            android:id="@+id/nav_browser"
+            android:layout_width="70dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="220dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/home_browser" />
+
+        <View
+            android:id="@+id/nav_camera"
+            android:layout_width="70dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="290dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/home_camera" />
+
+    </soup.neumorphism.NeumorphCardView>
+
+
+    <soup.neumorphism.NeumorphCardView
+        android:id="@+id/timecard"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="250dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center">
+
+        <TextClock
+            android:id="@+id/home_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp" />
+
+
+
+    </soup.neumorphism.NeumorphCardView>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="120dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 
 
 </RelativeLayout>

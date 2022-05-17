@@ -56,9 +56,9 @@ class MainActivity : AppCompatActivity() {
         layout.setOnTouchListener(object : OnSwipeTouchListener(this@MainActivity) {
             override fun onSwipeDown() {
                 super.onSwipeDown()
-//                Intent(this@MainActivity,Launcher_Home::class.java).apply {
-//                    startActivity(this)
-//                }
+                Intent(this@MainActivity,Launcher_Home::class.java).apply {
+                    startActivity(this)
+                }
                 Toast.makeText(this@MainActivity,"gesture down detected",Toast.LENGTH_SHORT).show()
             }
         })
