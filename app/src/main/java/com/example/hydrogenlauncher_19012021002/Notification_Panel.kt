@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.res.Configuration
 import android.os.BatteryManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,8 +12,22 @@ import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import android.widget.TextView
+import android.widget.SeekBar
+
+
+
 
 class Notification_Panel : AppCompatActivity() {
+
+    //for Brightness Modual
+    var seekbar: SeekBar? = null
+    var progress: TextView? = null
+    var context: Context? = null
+    var Brightness = 0
+    //Brightness Modual Ends Here
+
+
+
     private lateinit var layout1: LinearLayout
 
     var txtBatteryStatus: TextView? = null
@@ -46,7 +61,7 @@ class Notification_Panel : AppCompatActivity() {
 
     }
 
-    //Applying the gesture Modual
+
 
 
     //battry modual
@@ -68,5 +83,13 @@ class Notification_Panel : AppCompatActivity() {
 
         }
     }
+
+
+
+
+    //Applying Brightness Modual
+    //Getting Current screen brightness.
+
+
 
 }
