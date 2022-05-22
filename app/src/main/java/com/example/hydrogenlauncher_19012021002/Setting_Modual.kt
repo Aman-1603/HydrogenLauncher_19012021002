@@ -101,8 +101,8 @@ class Setting_Modual : AppCompatActivity() {
 //        set Volume Up down Modual
 
 
-        val volume_up = findViewById<Button>(R.id.setting_brightness_up)
-        val volume_down = findViewById<Button>(R.id.setting_brightness_down)
+        val volume_up = findViewById<Button>(R.id.volume_up)
+        val volume_down = findViewById<Button>(R.id.volume_down)
 
         // Declare an audio manager
         val audioManager = applicationContext.getSystemService(AUDIO_SERVICE) as AudioManager

@@ -223,12 +223,30 @@
                       android:id="@+id/volume_text"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:layout_centerVertical="true"
                       android:layout_marginStart="20dp"
                       android:layout_toEndOf="@+id/volume_icon"
                       android:text="Volume"
+                      android:layout_marginTop="10dp"
                       android:textColor="#FFFFFF"
                       android:textStyle="bold" />
+
+                  <Button
+                      android:id="@+id/volume_up"
+                      android:layout_width="120dp"
+                      android:layout_height="80dp"
+                      android:layout_marginLeft="10dp"
+                      android:layout_marginTop="50dp"
+                      android:background="@drawable/setting_back_notification"
+                      android:text="Volume UP" />
+
+                  <Button
+                      android:id="@+id/volume_down"
+                      android:layout_width="120dp"
+                      android:layout_height="80dp"
+                      android:background="@drawable/setting_back_notification"
+                      android:layout_marginLeft="150dp"
+                      android:layout_marginTop="50dp"
+                      android:text="Volume Down" />
 
                   <Switch
                       android:layout_width="wrap_content"
