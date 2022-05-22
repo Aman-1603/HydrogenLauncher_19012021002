@@ -3,6 +3,7 @@ package com.example.hydrogenlauncher_19012021002
 import android.app.AlertDialog
 import android.appwidget.AppWidgetHost
 import android.content.Intent
+import android.media.AudioManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,6 +24,7 @@ class Setting_Modual : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_setting_modual)
+//        setContentView(R.layout.brightness_dialogbox)
         getSupportActionBar()?.hide()
 
 
@@ -91,6 +93,32 @@ class Setting_Modual : AppCompatActivity() {
 //                //
 //            }
         }
+
+
+
+
+
+//        set Volume Up down Modual
+
+
+        val volume_up = findViewById<Button>(R.id.setting_brightness_up)
+        val volume_down = findViewById<Button>(R.id.setting_brightness_down)
+
+        // Declare an audio manager
+        val audioManager = applicationContext.getSystemService(AUDIO_SERVICE) as AudioManager
+
+        // At the click of upBtn
+        volume_up.setOnClickListener {
+            // ADJUST_RAISE = Raise the volume, FLAG_PLAY_SOUND = make a sound when clicked
+            audioManager.adjustVolume(AudioManager.ADJUST_RAISE,AudioManager.FLAG_SHOW_UI)
+        }
+        // At the click of downBtn
+        volume_down.setOnClickListener {
+            // ADJUST_LOWER = Lowers the volume, FLAG_PLAY_SOUND = make a sound when clicked
+            audioManager.adjustVolume(AudioManager.ADJUST_LOWER,AudioManager.FLAG_SHOW_UI)
+        }
+
+
     }
 
 
@@ -102,7 +130,6 @@ class Setting_Modual : AppCompatActivity() {
             imageView.setImageURI(imageUri)
         }
     }
-
 
 
 }

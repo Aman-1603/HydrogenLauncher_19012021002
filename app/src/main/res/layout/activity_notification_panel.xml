@@ -1,46 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linear1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/layout_home_back"
     tools:context=".Notification_Panel">
 
 
-
-    <TextView
-        style="@style/RegularTextStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/battery_txt"
-        android:text="Battery Status"
-        android:textSize="50dp"/>
-
-
     <LinearLayout
+        android:id="@+id/top"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_below="@+id/toolbar"
-        android:gravity="center">
+        android:layout_height="180dp"
+        android:orientation="vertical">
 
-        <soup.neumorphism.NeumorphCardView
-            android:id="@+id/bmiView"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:scaleType="centerInside"
-            android:layout_marginBottom="40dp"
-            app:layout_constraintBottom_toBottomOf="@+id/minusHeight"
-            app:layout_constraintEnd_toStartOf="@+id/minusHeight"
-            app:layout_constraintStart_toStartOf="parent"
-            app:neumorph_shapeAppearance="@style/CustomShapeAppearanceBMIView">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center">
+
 
                 <ProgressBar
                     android:id="@+id/progress_bar"
@@ -48,44 +29,406 @@
                     android:layout_width="150dp"
                     android:layout_height="180dp"
                     android:layout_centerInParent="true"
+                    android:layout_marginLeft="-50dp"
                     android:background="@drawable/circle_shape"
                     android:indeterminate="false"
                     android:progressDrawable="@drawable/circular_progress_bar" />
-
 
                 <TextView
                     android:id="@+id/textbattery"
                     style="@style/RegularTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="-100dp"
                     android:layout_centerInParent="true"
                     android:includeFontPadding="false"
                     android:text="status"
                     android:textSize="25dp" />
 
-            </RelativeLayout>
-
-
-        </soup.neumorphism.NeumorphCardView>
-
-
-<SeekBar
-    android:id="@+id/seekbar_brightness"
-    android:layout_width="300dp"
-    android:layout_height="50dp"/>
-
-        <TextView
-            android:id="@+id/brightness_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="Brightness Level"/>
-
-
-    </LinearLayout>
+            </LinearLayout>
 
 
 
 
 
 </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="170dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+                app:cardBackgroundColor="#d2f479"
+                app:cardCornerRadius="20dp">
+
+              <LinearLayout
+                  android:id="@+id/notification_card_internet"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+
+                  <View
+                      android:id="@+id/notification_view_internet"
+                  android:layout_width="40dp"
+                  android:layout_height="40dp"
+                      android:layout_marginTop="20dp"
+                      android:layout_marginLeft="10dp"
+                  android:background="@drawable/notification_ic_baseline_mobiledata_off_24"/>
+
+                  <TextView
+                      android:id="@+id/notification_text_internet"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Mobile Data"
+                      android:layout_marginTop="30dp"
+                      android:textSize="18dp"/>
+
+              </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/notification_card_wifi"
+
+                android:layout_width="170dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="10dp"
+                app:cardBackgroundColor="#d2f479"
+                app:cardCornerRadius="20dp">
+
+
+                <View
+                    android:id="@+id/notification_view_wifi"
+
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/ic_notification_signal_wifi_4_bar_24"/>
+
+                <TextView
+                    android:id="@+id/notification_text_wifi"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="WIFI"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="30dp"
+                    android:textSize="18dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="170dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+                app:cardBackgroundColor="#d2f479"
+                app:cardCornerRadius="20dp">
+
+                <View
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/ic_notification_airplanemode_active_24"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Airplane"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="30dp"
+                    android:textSize="18dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/notification_card_bluetooth"
+
+                android:layout_width="170dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="10dp"
+                app:cardBackgroundColor="#d2f479"
+                app:cardCornerRadius="20dp">
+
+                <View
+                    android:id="@+id/notification_view_bluetooth"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/ic_notification_bluetooth_24"/>
+
+                <TextView
+                    android:id="@+id/notification_text_bluetooth"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bluetooth"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="30dp"
+                    android:textSize="18dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/notification_card_location"
+                android:layout_width="170dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
+                app:cardBackgroundColor="#d2f479"
+                app:cardCornerRadius="20dp">
+
+                <View
+                    android:id="@+id/notification_view_location"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/ic_notification_location_on_24"/>
+
+                <TextView
+                    android:id="@+id/notification_text_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Location"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="30dp"
+                    android:textSize="18dp"/>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/notification_card_lightdark"
+                android:layout_width="170dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="10dp"
+                app:cardBackgroundColor="#d2f479"
+                app:cardCornerRadius="20dp">
+
+                <View
+                    android:id="@+id/notification_view_lightdark"
+
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/ic_notification_dark_mode_24"/>
+
+                <TextView
+                    android:id="@+id/notification_text_lightdark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dark Mode"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="30dp"
+                    android:textSize="18dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"></LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/seek_brightness"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="370dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:neumorph_strokeWidth="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:padding="4dp">
+
+
+                <SeekBar
+                    android:id="@+id/seekbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:progress="160"
+                    android:progressDrawable="@drawable/seekbar_style"
+                    android:thumb="@drawable/custom_thumb"
+                    android:splitTrack="false"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="4dp"
+                    app:layout_constraintBottom_toTopOf="@+id/brightnessvalue"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/brightnessvalue"
+                    style="@style/RegularTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="4dp"
+                    android:text="brightness"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </soup.neumorphism.NeumorphCardView>
+
+
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/brightness_progress"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <soup.neumorphism.NeumorphCardView
+                android:layout_width="370dp"
+                android:layout_height="180dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline_center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:neumorph_strokeWidth="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:padding="4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BrightNess and Volume OverView"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ProgressBar
+                        android:id="@+id/brightness_progressbar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginTop="28dp"
+                        android:background="@drawable/circle_shape"
+                        android:indeterminate="false"
+                        android:progressDrawable="@drawable/circular_progress_bar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <ProgressBar
+                        android:id="@+id/Volume_progressbar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="184dp"
+                        android:layout_marginTop="28dp"
+                        android:background="@drawable/circle_shape"
+                        android:indeterminate="false"
+                        android:progressDrawable="@drawable/circular_progress_bar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/txt_brightness"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Brightness"
+                        app:layout_constraintBottom_toBottomOf="@+id/brightness_progressbar"
+                        app:layout_constraintEnd_toEndOf="@+id/brightness_progressbar"
+                        app:layout_constraintStart_toStartOf="@+id/brightness_progressbar"
+                        app:layout_constraintTop_toTopOf="@+id/brightness_progressbar" />
+
+                    <TextView
+                        android:id="@+id/txt_Volume"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Volume"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/Volume_progressbar"
+                        app:layout_constraintStart_toStartOf="@+id/Volume_progressbar"
+                        app:layout_constraintTop_toTopOf="@+id/Volume_progressbar" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </soup.neumorphism.NeumorphCardView>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

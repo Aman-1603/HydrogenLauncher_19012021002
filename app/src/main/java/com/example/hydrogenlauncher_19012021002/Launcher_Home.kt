@@ -1,7 +1,9 @@
 package com.example.hydrogenlauncher_19012021002
+import android.animation.Animator
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.net.Uri
 import android.os.Build
@@ -14,9 +16,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
 import android.widget.*
+import android.view.ViewAnimationUtils
+import androidx.core.content.res.ResourcesCompat
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlin.math.hypot
+import kotlin.math.max
+
 
 class Launcher_Home : AppCompatActivity() {
     private lateinit var layout: RelativeLayout
+
+    //for circularRevelaed Animation
+
+    private var isRevealed = false
+    private lateinit var mRevealLayout: View
+    private lateinit var mFab: FloatingActionButton
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -96,10 +112,10 @@ class Launcher_Home : AppCompatActivity() {
 
                 override fun onSwipeUp() {
                     super.onSwipeUp()
+
                     Intent(this@Launcher_Home, MainActivity::class.java).apply {
                         startActivity(this)
-                        overridePendingTransition(R.anim.swipeup_animation,R.anim.swipedown_animation)
-
+                        revealLayoutFun()
                     }
                 }
 
@@ -173,5 +189,115 @@ class Launcher_Home : AppCompatActivity() {
 
         }
 
+    private fun revealLayoutFun() {
+        if (!isRevealed) {
+
+            // get the right and bottom side
+            // lengths of the reveal layout
+            val x: Int = mRevealLayout.right
+            val y: Int = mRevealLayout.bottom
+
+            // here the starting radius of the reveal
+            // layout is 0 when it is not visible
+            val startRadius = 0
+
+            // make the end radius should match
+            // the while parent view
+            val endRadius = hypot(
+                mRevealLayout.width.toDouble(),
+                mRevealLayout.height.toDouble()
+            ).toInt()
+
+            // and set the background tint of the FAB to white
+            // color so that it can be visible
+            mFab.backgroundTintList = ColorStateList.valueOf(
+                ResourcesCompat.getColor(
+                    resources,
+                    R.color.white,
+                    null
+                )
+            )
+            // now set the icon as close for the FAB
+            mFab.setImageResource(R.drawable.ic_baseline_close_24)
+
+            // create the instance of the ViewAnimationUtils to
+            // initiate the circular reveal animation
+            val anim = ViewAnimationUtils.createCircularReveal(
+                mRevealLayout,
+                x,
+                y,
+                startRadius.toFloat(),
+                endRadius.toFloat()
+            )
+
+            // make the invisible reveal layout to visible
+            // so that upon revealing it can be visible to user
+            mRevealLayout.visibility = View.VISIBLE
+            // now start the reveal animation
+            anim.start()
+
+            // set the boolean value to true as the reveal
+            // layout is visible to the user
+            isRevealed = true
+
+        } else {
+
+            // get the right and bottom side lengths
+            // of the reveal layout
+            val x: Int = mRevealLayout.right
+            val y: Int = mRevealLayout.bottom
+
+            // here the starting radius of the reveal layout is its full width
+            val startRadius: Int = max(mRevealLayout.width, mRevealLayout.height)
+
+            // and the end radius should be zero
+            // at this point because the layout should be closed
+            val endRadius = 0
+
+            // now set the background tint of the FAB to green
+            // so that it can be visible to the user
+            mFab.backgroundTintList = ColorStateList.valueOf(
+                ResourcesCompat.getColor(
+                    resources,
+                    R.color.black,
+                    null
+                )
+            )
+
+            // now again set the icon of the FAB to plus
+            mFab.setImageResource(R.drawable.ic_add)
+
+            // create the instance of the ViewAnimationUtils to
+            // initiate the circular reveal animation
+            val anim = ViewAnimationUtils.createCircularReveal(
+                mRevealLayout,
+                x,
+                y,
+                startRadius.toFloat(),
+                endRadius.toFloat()
+            )
+
+            // now as soon as the animation is ending, the reveal
+            // layout should also be closed
+            anim.addListener(object : Animator.AnimatorListener {
+                override fun onAnimationStart(animator: Animator) {}
+                override fun onAnimationEnd(animator: Animator) {
+                    mRevealLayout.visibility = View.GONE
+                }
+
+                override fun onAnimationCancel(animator: Animator) {}
+                override fun onAnimationRepeat(animator: Animator) {}
+            })
+
+            // start the closing animation
+            anim.start()
+
+            // set the boolean variable to false
+            // as the reveal layout is invisible
+            isRevealed = false
+        }
     }
+
+
+}
 
