@@ -12,6 +12,7 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 
 class Setting_Modual : AppCompatActivity() {
@@ -45,7 +46,14 @@ class Setting_Modual : AppCompatActivity() {
 
 
 
+//navigating through theme
 
+        val theme = findViewById<RelativeLayout>(R.id.theme_relative)
+        theme.setOnClickListener {
+            Intent(this@Setting_Modual,colorpiker::class.java).apply {
+                startActivity(this)
+            }
+        }
 
 
 

@@ -44,14 +44,14 @@ class Launcher_Home : AppCompatActivity() {
 
         //go to right second activity
 
-        val button1 = findViewById<Button>(R.id.gotosecondactivity)
-        button1.setOnClickListener {
-            Intent(this, secondactivity::class.java).apply {
-
-                startActivity(this)
-                overridePendingTransition(R.anim.swiperight_animation, R.anim.swipeleft_animation)
-            }
-        }
+//        val button1 = findViewById<Button>(R.id.gotosecondactivity)
+//        button1.setOnClickListener {
+//            Intent(this, secondactivity::class.java).apply {
+//
+//                startActivity(this)
+//                overridePendingTransition(R.anim.swiperight_animation, R.anim.swipeleft_animation)
+//            }
+//        }
 
         //goto setting modual
 
@@ -69,28 +69,28 @@ class Launcher_Home : AppCompatActivity() {
 
 
             //navigating using button
-            val button = findViewById<Button>(R.id.gonext)
-            button.setOnClickListener {
-                Intent(this, MainActivity::class.java).apply {
-                    startActivity(this)
-                }
-
-
-                //infalting dilaogbox
-                val button = findViewById<Button>(R.id.dialog_box)
-                button.setOnClickListener {
-                    val mDialogView =
-                        LayoutInflater.from(this).inflate(R.layout.activity_recentdialogbox, null)
-
-                    //alertdialogbuilder
-                    val mBuilder = AlertDialog.Builder(this)
-                        .setView(mDialogView)
-                        .setTitle("recent app use")
-                    mBuilder.show()
-                }
-
-
-            }
+//            val button = findViewById<Button>(R.id.gonext)
+//            button.setOnClickListener {
+//                Intent(this, MainActivity::class.java).apply {
+//                    startActivity(this)
+//                }
+//
+//
+//                //infalting dilaogbox
+//                val button = findViewById<Button>(R.id.dialog_box)
+//                button.setOnClickListener {
+//                    val mDialogView =
+//                        LayoutInflater.from(this).inflate(R.layout.activity_recentdialogbox, null)
+//
+//                    //alertdialogbuilder
+//                    val mBuilder = AlertDialog.Builder(this)
+//                        .setView(mDialogView)
+//                        .setTitle("recent app use")
+//                    mBuilder.show()
+//                }
+//
+//
+//            }
             layout = findViewById(R.id.relativeLayout)
             layout.setOnTouchListener(object : OnSwipeTouchListener(this@Launcher_Home) {
                 override fun onSwipeLeft() {

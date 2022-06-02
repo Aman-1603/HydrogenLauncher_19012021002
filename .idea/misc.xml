@@ -19,6 +19,7 @@
         <entry key="..\:/Users/ASUS/Desktop/SEM-6/CP/HydrogenLauncher_19012021002/app/src/main/res/drawable/layout_home_back.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/ASUS/Desktop/SEM-6/CP/HydrogenLauncher_19012021002/app/src/main/res/drawable/notification_ic_baseline_mobiledata_off_24.xml" value="0.17708333333333334" />
         <entry key="..\:/Users/ASUS/Desktop/SEM-6/CP/HydrogenLauncher_19012021002/app/src/main/res/drawable/round_edit_setting.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/ASUS/Desktop/SEM-6/CP/HydrogenLauncher_19012021002/app/src/main/res/drawable/seekbar_a_background.xml" value="0.2520833333333333" />
         <entry key="..\:/Users/ASUS/Desktop/SEM-6/CP/HydrogenLauncher_19012021002/app/src/main/res/drawable/seekbar_progress.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/ASUS/Desktop/SEM-6/CP/HydrogenLauncher_19012021002/app/src/main/res/drawable/seekbar_style.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/ASUS/Desktop/SEM-6/CP/HydrogenLauncher_19012021002/app/src/main/res/drawable/setting_back_nightmode.xml" value="0.24947916666666667" />
@@ -27,6 +28,7 @@
         <entry key="..\:/Users/ASUS/Desktop/SEM-6/CP/HydrogenLauncher_19012021002/app/src/main/res/drawable/setting_back_privete_account.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/ASUS/Desktop/SEM-6/CP/HydrogenLauncher_19012021002/app/src/main/res/drawable/setting_back_security.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/ASUS/Desktop/SEM-6/CP/HydrogenLauncher_19012021002/app/src/main/res/drawable/setting_back_white.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/ASUS/Desktop/SEM-6/CP/HydrogenLauncher_19012021002/app/src/main/res/layout/activity_colorpiker.xml" value="0.25" />
         <entry key="..\:/Users/ASUS/Desktop/SEM-6/CP/HydrogenLauncher_19012021002/app/src/main/res/layout/activity_home_screen_long_press.xml" value="0.25" />
         <entry key="..\:/Users/ASUS/Desktop/SEM-6/CP/HydrogenLauncher_19012021002/app/src/main/res/layout/activity_launcher_home.xml" value="0.209375" />
         <entry key="..\:/Users/ASUS/Desktop/SEM-6/CP/HydrogenLauncher_19012021002/app/src/main/res/layout/activity_main.xml" value="0.2222222222222222" />
@@ -36,6 +38,7 @@
         <entry key="..\:/Users/ASUS/Desktop/SEM-6/CP/HydrogenLauncher_19012021002/app/src/main/res/layout/activity_setting_modual.xml" value="0.25" />
         <entry key="..\:/Users/ASUS/Desktop/SEM-6/CP/HydrogenLauncher_19012021002/app/src/main/res/layout/activity_wallpaper_modual.xml" value="0.25" />
         <entry key="..\:/Users/ASUS/Desktop/SEM-6/CP/HydrogenLauncher_19012021002/app/src/main/res/layout/brightness_dialogbox.xml" value="0.25" />
+        <entry key="..\:/Users/ASUS/Desktop/SEM-6/CP/HydrogenLauncher_19012021002/app/src/main/res/layout/colorpicker.xml" value="0.25" />
         <entry key="..\:/Users/ASUS/Desktop/SEM-6/CP/HydrogenLauncher_19012021002/app/src/main/res/layout/edit_profile_dialogbox.xml" value="0.14270833333333333" />
         <entry key="..\:/Users/ASUS/Desktop/SEM-6/CP/HydrogenLauncher_19012021002/app/src/main/res/layout/extra_dialog_check.xml" value="0.25" />
         <entry key="..\:/Users/ASUS/Desktop/SEM-6/CP/HydrogenLauncher_19012021002/app/src/main/res/layout/fragment_app_drawer.xml" value="0.2234375" />

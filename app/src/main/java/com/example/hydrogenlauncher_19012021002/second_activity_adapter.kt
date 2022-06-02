@@ -65,48 +65,33 @@ class second_activity_adapter(val list : ArrayList<second_activity_companion>, v
 //                val intent = Intent(context,Calculator::class.java)
 //                context.startActivity(intent)
 //            }
-            if (position == 2){
-                Toast.makeText(context, "Calender Opened", Toast.LENGTH_LONG).show()
-                val intent = Intent(Intent.ACTION_INSERT)
-                intent.data = CalendarContract.Events.CONTENT_URI
-                intent.putExtra(CalendarContract.Events.TITLE, "L&T TS")
-                intent.putExtra(CalendarContract.Events.EVENT_LOCATION, "Mysore")
-                intent.putExtra(CalendarContract.Events.DESCRIPTION, "Trip")
-                intent.putExtra(CalendarContract.Events.ALL_DAY, true)
-                intent.putExtra(Intent.EXTRA_EMAIL, "test@yahoo.com")
-                context.startActivity(intent);
-            }
-            if (position == 3){
+            if (position == 1){
+
                 Toast.makeText(context, "Dial Pad Opened", Toast.LENGTH_LONG).show()
                 val intent = Intent(Intent.ACTION_DIAL)
                 intent.data = Uri.parse("tel:+91 8867127270")
                 context.startActivity(intent)
-
             }
-            if (position == 4){
+            if (position == 2){
                 Toast.makeText(context, "Contacts Opened", Toast.LENGTH_LONG).show()
                 val intent = Intent(Intent.ACTION_PICK)
                 intent.type = ContactsContract.Contacts.CONTENT_TYPE
                 context.startActivity(intent)
+
             }
-            if (position == 5){
+            if (position == 3){
                 Toast.makeText(context, "Browser Opened", Toast.LENGTH_LONG).show()
                 val intent = Intent(Intent.ACTION_VIEW)
                 intent.data = Uri.parse("https://www.google.co.in/")
                 context.startActivity(intent)
             }
-            if (position == 6){
+            if (position == 4){
                 Toast.makeText(context, "Camera Opened", Toast.LENGTH_LONG).show()
                 val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
                 context.startActivity(intent)
             }
-            if (position == 7){
-                Toast.makeText(context, "Alarm Opened", Toast.LENGTH_LONG).show()
-                val openClockIntent = Intent(AlarmClock.ACTION_SET_ALARM)
-                openClockIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                context.startActivity(openClockIntent)
-            }
-            if (position == 8){
+
+            if (position == 5){
                 Toast.makeText(context, "Email Opened", Toast.LENGTH_LONG).show()
                 val intent = Intent(Intent.ACTION_SENDTO)
                 intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("sultanbepari2732000@gmail.com"))
@@ -119,7 +104,7 @@ class second_activity_adapter(val list : ArrayList<second_activity_companion>, v
                     Toast.makeText(context, "There is no application that support this action", Toast.LENGTH_SHORT).show()
                 }
             }
-            if (position == 9){
+            if (position == 8){
                 Toast.makeText(context, "Message Opened", Toast.LENGTH_LONG).show()
                 val intent = Intent(Intent.ACTION_VIEW)
 
